@@ -15,7 +15,7 @@ const Landing = () => {
         <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-b from-cyan-200/50 via-cyan-200/60 to-amber-400/50 shadow-2xl shadow-amber-400/40 backdrop-blur-md" />
         <div className="flex flex-col gap-8 p-8">
           <h2 className="bold relative text-6xl text-amber-400 after:absolute after:top-[105%] after:left-0 after:h-[5px] after:w-[20%] after:bg-amber-400 after:content-['']">
-            Let's climb together
+            Let&#39;s climb together
           </h2>
           <ul className="ml-7 flex list-disc flex-col gap-2">
             <li className="font-nunito text-2xl text-cyan-900">

@@ -17,9 +17,9 @@ const Cards = () => {
             all in one place.
           </p>
           <p>
-            Whether you're a seasoned pro or just starting, we aim to provide a
-            platform that fosters growth, challenges, and unforgettable
-            experiences.
+            Whether you&#39;re a seasoned pro or just starting, we aim to
+            provide a platform that fosters growth, challenges, and
+            unforgettable experiences.
           </p>
         </div>
       </div>
@@ -29,8 +29,8 @@ const Cards = () => {
         </h4>
         <div className="flex flex-col gap-3 text-xl text-cyan-900">
           <p>
-            Bouldering is more than just a sport; it's a way to test your limits
-            and push past boundaries.
+            Bouldering is more than just a sport; it&#39;s a way to test your
+            limits and push past boundaries.
           </p>
           <p>
             Our platform allows you to easily find upcoming competitions and{" "}
@@ -54,14 +54,14 @@ const Cards = () => {
             essential to improving your climbing skills.
           </p>
           <p>
-            That's why we offer an extensive overview offer{" "}
+            That&#39;s why we offer an extensive overview offer{" "}
             <strong className="my-text-stroke">bouldering gyms</strong> across
             the area, helping you find the perfect place to train, meet other
             climbers, and prepare for your next competition.
           </p>
           <p>
-            Whether you're looking for a beginner-friendly space or a gym with
-            challenging routes, we've got you covered.
+            Whether you&#39;re looking for a beginner-friendly space or a gym
+            with challenging routes, we&#39;ve got you covered.
           </p>
         </div>
       </div>
