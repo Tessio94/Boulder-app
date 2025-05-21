@@ -2,11 +2,14 @@
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import LocalePicker from "./LocalePicker";
 
 const Header = () => {
   const pathname = usePathname();
+  const t = useTranslations("Header");
 
   return (
     <header className="absolute z-10 flex w-full max-w-[1920px] items-center justify-between bg-cyan-100/80 px-16 py-3">
@@ -32,12 +35,12 @@ const Header = () => {
                   : "text-cyan-900",
               )}
             >
-              Home
+              {t("home")}
             </Link>
           </li>
           <li>
             <Link
-              href="/events"
+              href={t("linkEvents")}
               className={cn(
                 "my-text-stroke relative cursor-pointer text-3xl font-extrabold capitalize after:absolute after:top-[100%] after:left-0 after:h-2 after:w-2 after:translate-x-0 after:rounded-full after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] hover:after:translate-x-[108px]",
                 pathname === "/events"
@@ -45,12 +48,12 @@ const Header = () => {
                   : "text-cyan-900",
               )}
             >
-              Events
+              {t("events")}
             </Link>
           </li>
           <li>
             <Link
-              href="/details"
+              href={t("linkDetails")}
               className={cn(
                 "my-text-stroke relative cursor-pointer text-3xl font-extrabold capitalize after:absolute after:top-[100%] after:left-0 after:h-2 after:w-2 after:translate-x-0 after:rounded-full after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] hover:after:translate-x-[108px]",
                 pathname === "/details"
@@ -58,12 +61,12 @@ const Header = () => {
                   : "text-cyan-900",
               )}
             >
-              Details
+              {t("details")}
             </Link>
           </li>
           <li>
             <Link
-              href="/gallery"
+              href={t("linkGallery")}
               className={cn(
                 "my-text-stroke relative cursor-pointer text-3xl font-extrabold capitalize after:absolute after:top-[100%] after:left-0 after:h-2 after:w-2 after:translate-x-0 after:rounded-full after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] hover:after:translate-x-[114px]",
                 pathname === "/gallery"
@@ -71,16 +74,16 @@ const Header = () => {
                   : "text-cyan-900",
               )}
             >
-              Gallery
+              {t("gallery")}
             </Link>
           </li>
         </ul>
       </nav>
 
-      <div className="my-text-stroke">
+      <div className="my-text-stroke flex items-center gap-10">
         <Link
           className="flex items-center gap-3 text-3xl font-extrabold text-cyan-900/90"
-          href="/login"
+          href={t("linkLogin")}
         >
           <Image
             src="/header/login.svg"
@@ -88,8 +91,9 @@ const Header = () => {
             width={40}
             height={40}
           />
-          Login
+          {t("login")}
         </Link>
+        <LocalePicker />
       </div>
     </header>
   );
