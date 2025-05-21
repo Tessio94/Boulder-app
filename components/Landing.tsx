@@ -14,7 +14,8 @@ const Landing = () => {
         width={1920}
         height={1080}
       />
-      <div className="3xl:top-[450px] absolute left-[100px] z-10 text-white">
+      {/* 3xl:top-[450px] */}
+      <div className="absolute top-[450px] left-[100px] z-10">
         <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-b from-cyan-200/50 via-cyan-200/60 to-amber-400/50 shadow-2xl shadow-amber-400/40 backdrop-blur-md" />
         <div className="flex flex-col gap-8 p-8">
           <h2 className="bold relative text-6xl text-amber-400 after:absolute after:top-[105%] after:left-0 after:h-[5px] after:w-[20%] after:bg-amber-400 after:content-['']">

@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   // description: "Boulder App – Finden Sie alle Kletter-Events in Ihrer Nähe.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: Readonly<{

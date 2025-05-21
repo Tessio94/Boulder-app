@@ -1,7 +1,7 @@
 import Content from "@/components/Content";
 import Landing from "@/components/Landing";
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <Landing />

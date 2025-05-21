@@ -82,7 +82,7 @@ const Header = () => {
 
       <div className="my-text-stroke flex items-center gap-10">
         <Link
-          className="flex items-center gap-3 text-3xl font-extrabold text-cyan-900/90"
+          className="flex items-center gap-3 rounded-2xl bg-cyan-900/10 px-2 py-[1px] text-3xl font-extrabold text-cyan-900/90 transition-all duration-500 hover:bg-cyan-900/30"
           href={t("linkLogin")}
         >
           <Image
@@ -90,6 +90,7 @@ const Header = () => {
             alt="ikona za login"
             width={40}
             height={40}
+            className="red"
           />
           {t("login")}
         </Link>
