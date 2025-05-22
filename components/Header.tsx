@@ -23,8 +23,8 @@ const Header = () => {
         />
       </Link>
 
-      <nav>
-        <ul className="flex gap-20">
+      <nav className="hidden lg:block">
+        <ul className="flex lg:gap-10 xl:gap-20">
           <li>
             <Link
               href="/"
@@ -67,9 +67,9 @@ const Header = () => {
         </ul>
       </nav>
 
-      <div className="my-text-stroke flex items-center gap-10">
+      <div className="my-text-stroke ml-auto flex items-center lg:ml-0 lg:gap-4 xl:gap-10">
         <Link
-          className="flex items-center gap-3 rounded-2xl bg-cyan-900/10 px-2 py-[1px] text-3xl font-extrabold text-cyan-900/90 transition-all duration-500 hover:bg-cyan-900/30"
+          className="hidden items-center gap-3 rounded-2xl bg-cyan-900/10 px-2 py-[1px] text-3xl font-extrabold text-cyan-900/90 transition-all duration-500 hover:bg-cyan-900/30 lg:flex"
           href={t("linkLogin")}
         >
           <Image
@@ -83,6 +83,41 @@ const Header = () => {
         </Link>
         <LocalePicker />
       </div>
+
+      {/* Mobile hamb menu */}
+      <button className="lg:hidden">
+        <Image src="/icons/menu.svg" alt="Menu" width={40} height={40} />
+      </button>
+      {/* Mobile navigation */}
+      <nav className="fixed top-0 bottom-0 left-0 z-20 flex w-64 translate-x-[-100%] flex-col justify-between bg-cyan-200 bg-gradient-to-b from-cyan-900/10 to-amber-400/50 px-6 pt-[125px] pb-[225px] shadow-lg lg:hidden">
+        <ul className="flex flex-col gap-8 text-2xl font-bold text-cyan-900">
+          <li>
+            <Link href="/">{t("home")}</Link>
+          </li>
+          <li>
+            <Link href={t("linkEvents")}>{t("events")}</Link>
+          </li>
+          <li>
+            <Link href={t("linkGallery")}>{t("gallery")}</Link>
+          </li>
+        </ul>
+        <div className="my-text-stroke flex flex-col items-start gap-8">
+          <Link
+            className="flex items-center gap-3 rounded-2xl bg-cyan-900/10 text-3xl font-extrabold text-cyan-900/90 transition-all duration-500 hover:bg-cyan-900/30"
+            href={t("linkLogin")}
+          >
+            <Image
+              src="/header/login.svg"
+              alt="ikona za login"
+              width={40}
+              height={40}
+              className="red"
+            />
+            {t("login")}
+          </Link>
+          <LocalePicker />
+        </div>
+      </nav>
     </header>
   );
 };

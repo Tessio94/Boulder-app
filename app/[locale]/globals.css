@@ -60,3 +60,9 @@ body {
     @slot;
   }
 }
+
+@custom-variant 1_5xl {
+  @media (width > 1450px) {
+    @slot;
+  }
+}
