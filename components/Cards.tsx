@@ -1,11 +1,29 @@
+"use client";
+
 import { useTranslations } from "next-intl";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { containerVariants, cardsVariants } from "@/lib/animation";
 
 const Cards = () => {
   const t = useTranslations("Cards");
 
+  const ref = useRef(null);
+
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
   return (
-    <div className="relative z-10 mb-[80px] flex items-stretch justify-center gap-16 px-[160px]">
-      <div className="bg-cards relative z-20 flex max-w-[500px] flex-col items-center gap-8 rounded-2xl px-6 pt-4 pb-10 shadow-xl shadow-cyan-900/60">
+    <motion.div
+      className="relative z-10 mb-[80px] flex items-stretch justify-center gap-16 px-[160px]"
+      ref={ref}
+      initial="hidden"
+      animate={isInView ? "show" : "hidden"}
+      variants={containerVariants(0)}
+    >
+      <motion.div
+        className="bg-cards relative z-20 flex max-w-[500px] flex-col items-center gap-8 rounded-2xl px-6 pt-4 pb-10 shadow-xl shadow-cyan-900/60"
+        variants={cardsVariants}
+      >
         <h4 className="my-text-stroke relative text-3xl font-extrabold text-cyan-900 after:absolute after:top-[103%] after:left-0 after:h-[5px] after:w-[70px] after:bg-amber-400 after:content-['']">
           {t("card1.title")}
         </h4>
@@ -18,8 +36,11 @@ const Cards = () => {
           <p>{t("card1.text2")}</p>
           <p>{t("card1.text3")}</p>
         </div>
-      </div>
-      <div className="bg-cards flex max-w-[500px] flex-col items-center gap-8 rounded-2xl px-6 pt-4 pb-10 shadow-xl shadow-cyan-900/60">
+      </motion.div>
+      <motion.div
+        className="bg-cards flex max-w-[500px] flex-col items-center gap-8 rounded-2xl px-6 pt-4 pb-10 shadow-xl shadow-cyan-900/60"
+        variants={cardsVariants}
+      >
         <h4 className="my-text-stroke relative text-center text-3xl font-extrabold text-cyan-900 after:absolute after:top-[103%] after:left-0 after:h-[5px] after:w-[70px] after:bg-amber-400 after:content-['']">
           {t("card2.title")}
         </h4>
@@ -32,8 +53,11 @@ const Cards = () => {
           </p>
           <p>{t("card2.text3")}</p>
         </div>
-      </div>
-      <div className="bg-cards flex max-w-[500px] flex-col items-center gap-8 rounded-2xl px-6 pt-4 pb-10 shadow-xl shadow-cyan-900/60">
+      </motion.div>
+      <motion.div
+        className="bg-cards flex max-w-[500px] flex-col items-center gap-8 rounded-2xl px-6 pt-4 pb-10 shadow-xl shadow-cyan-900/60"
+        variants={cardsVariants}
+      >
         <h4 className="my-text-stroke relative text-center text-3xl font-extrabold text-cyan-900 after:absolute after:top-[103%] after:left-0 after:h-[5px] after:w-[70px] after:bg-amber-400 after:content-['']">
           {t("card3.title")}
         </h4>
@@ -46,8 +70,8 @@ const Cards = () => {
           </p>
           <p>{t("card3.text3")}</p>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

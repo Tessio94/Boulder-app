@@ -2,7 +2,6 @@
   "Header": {
     "home": "Home",
     "events": "Events",
-    "details": "Details",
     "gallery": "Gallery",
     "login": "Login",
     "linkEvents": "/events",

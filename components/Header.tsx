@@ -53,19 +53,6 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href={t("linkDetails")}
-              className={cn(
-                "my-text-stroke relative cursor-pointer text-3xl font-extrabold capitalize after:absolute after:top-[100%] after:left-0 after:h-2 after:w-2 after:translate-x-0 after:rounded-full after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] hover:after:translate-x-[108px]",
-                pathname === "/details"
-                  ? "text-cyan-700/80 after:translate-x-[54px]"
-                  : "text-cyan-900",
-              )}
-            >
-              {t("details")}
-            </Link>
-          </li>
-          <li>
-            <Link
               href={t("linkGallery")}
               className={cn(
                 "my-text-stroke relative cursor-pointer text-3xl font-extrabold capitalize after:absolute after:top-[100%] after:left-0 after:h-2 after:w-2 after:translate-x-0 after:rounded-full after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] hover:after:translate-x-[114px]",

@@ -33,6 +33,23 @@ body {
   -webkit-text-stroke-width: 1px;
 }
 
+@utility my-text-stroke2 {
+  -webkit-text-stroke: #104e64e6;
+  -webkit-text-stroke-width: 2px;
+}
+
+@utility input {
+  @apply w-full rounded-2xl bg-cyan-200 px-5 py-2 text-cyan-900 outline-cyan-700;
+}
+
+@utility btn-social {
+  @apply flex w-full cursor-pointer items-center justify-center gap-5 rounded-2xl border-[2px] border-transparent bg-cyan-200 px-5 py-2 text-cyan-900 transition-all duration-500 hover:border-cyan-200 hover:bg-cyan-900 hover:text-cyan-200;
+}
+
+@utility icon {
+  @apply absolute top-[50%] right-5 h-8 w-8 translate-y-[-50%] cursor-pointer rounded-full p-1 transition-all hover:bg-slate-400/40;
+}
+
 @utility my-big-breakpoint {
   @media screen {
   }
