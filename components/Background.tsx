@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Background = () => {
   return (
-    <div className="absolute inset-0 z-[-10]">
+    <div className="absolute inset-0 z-[-10] bg-cyan-200/10">
       <Image
         className="absolute top-[650px] left-[160px] z-[-10]"
         src="/homepage/bouldering.svg"

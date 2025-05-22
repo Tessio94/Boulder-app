@@ -6,7 +6,7 @@ import LoginBanner from "./LoginBanner";
 const Content = () => {
   return (
     <main className="relative pt-[120px]">
-      <Background />
+      {/* <Background /> */}
       <Cards />
       <Competition />
       <LoginBanner />

@@ -66,3 +66,9 @@ body {
     @slot;
   }
 }
+
+@custom-variant xsm {
+  @media (width < 430px) {
+    @slot;
+  }
+}

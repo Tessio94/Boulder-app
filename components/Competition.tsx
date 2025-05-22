@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
 import { containerVariants, listItemVariants } from "@/lib/animation";
 import { useRef } from "react";
+import Image from "next/image";
 
 const Competition = () => {
   const t = useTranslations("Competition");
@@ -17,75 +18,112 @@ const Competition = () => {
   const isInView3 = useInView(ref3, { once: true, amount: 0.3 });
 
   return (
-    <section className="relative flex min-h-[1450px] flex-col items-center gap-[80px] pt-[20px] lg:min-h-[800px] lg:pt-[80px]">
-      <h4 className="my-text-stroke mb-[40px] text-6xl text-cyan-900">
+    <section className="relative mb-[90px] px-[20px] pt-[20px] sm:px-[50px] lg:px-[100px] lg:pt-[80px] 2xl:px-[160px]">
+      <Image
+        className="absolute top-[-300px] left-[20px] z-[-10] w-[150] sm:left-[50px] lg:left-[100px] lg:w-[250] xl:top-[0px] 2xl:left-[160px]"
+        src="/homepage/bouldering.svg"
+        alt=""
+        width={250}
+        height={155}
+      />
+      <Image
+        className="absolute top-[-300px] right-[20px] z-[-10] w-[110px] sm:right-[50px] lg:right-[100px] lg:w-[180] xl:top-[0px] 2xl:right-[160px]"
+        src="/homepage/bouldering1.svg"
+        alt=""
+        width={180}
+        height={176}
+      />
+      <h4 className="my-text-stroke mb-[80px] text-center text-6xl text-cyan-900 lg:mb-[130px]">
         {t("title")}
       </h4>
-      <div className="absolute top-[750px] hidden h-[5px] w-[850px] rotate-90 bg-amber-400 sm:block sm:translate-x-[-32%] md:translate-x-[-39%] lg:relative lg:top-[unset] lg:w-[60%] lg:translate-x-[unset] lg:rotate-0">
-        <div className="absolute top-[50%] left-0 flex h-[60px] w-[60px] translate-y-[-50%] rotate-270 items-center justify-center rounded-full bg-amber-400 text-3xl font-bold text-cyan-900 lg:rotate-0">
-          1
+      <div className="xsm:gap-[30px] flex w-full items-center justify-between gap-[55px] sm:gap-[80px] lg:min-h-[450px] lg:flex-col lg:justify-start">
+        <div className="xsm:ml-[20px] relative ml-[30px] flex w-[5px] flex-col items-center gap-68 bg-amber-400 lg:ml-0 lg:h-[5px] lg:w-[80%]">
+          <div className="xsm:h-[40px] xsm:w-[40px] xsm:text-2xl flex h-[60px] w-[60px] items-center justify-center rounded-full bg-amber-400 text-3xl font-bold text-cyan-900 lg:absolute lg:top-[50%] lg:left-0 lg:translate-y-[-50%]">
+            1
+          </div>
+          <div className="xsm:h-[40px] xsm:w-[40px] xsm:text-2xl flex h-[60px] w-[60px] items-center justify-center rounded-full bg-amber-400 text-3xl font-bold text-cyan-900 lg:absolute lg:top-[50%] lg:left-[50%] lg:translate-x-[-50%] lg:translate-y-[-50%]">
+            2
+          </div>
+          <div className="xsm:h-[40px] xsm:w-[40px] xsm:text-2xl flex h-[60px] w-[60px] items-center justify-center rounded-full bg-amber-400 text-3xl font-bold text-cyan-900 lg:absolute lg:top-[50%] lg:right-0 lg:translate-y-[-50%]">
+            3
+          </div>
         </div>
-        <div className="absolute top-[50%] left-[50%] flex h-[60px] w-[60px] translate-x-[-50%] translate-y-[-50%] rotate-270 items-center justify-center rounded-full bg-amber-400 text-3xl font-bold text-cyan-900 lg:rotate-0">
-          2
-        </div>
-        <div className="absolute top-[50%] right-0 flex h-[60px] w-[60px] translate-y-[-50%] rotate-270 items-center justify-center rounded-full bg-amber-400 text-3xl font-bold text-cyan-900 lg:rotate-0">
-          3
-        </div>
-      </div>
-      <div className="relative top-[750px] right-[calc(100vw-10%)] w-[850px] translate-x-[50%] rotate-90 sm:absolute sm:right-[-40%] sm:translate-x-[unset] md:right-[-27%] lg:relative lg:top-[unset] lg:right-[unset] lg:w-[60%] lg:rotate-0">
-        <div className="1_5xl:w-[400px] absolute flex h-[300px] translate-x-[-50%] rotate-270 flex-col items-center justify-start gap-8 rounded-2xl bg-cyan-900/10 p-6 text-cyan-900 shadow-lg shadow-cyan-900/50 sm:w-[50%] md:w-[60%] lg:left-0 lg:w-[280px] lg:rotate-0 xl:w-[300px]">
-          <p className="text-3xl">{t("step1.title")}</p>
-          <motion.div
-            className="flex w-full flex-col gap-5"
-            ref={ref1}
-            initial="hidden"
-            animate={isInView1 ? "show" : "hidden"}
-            variants={containerVariants(0)}
-          >
-            <motion.p className="text-xl" variants={listItemVariants}>
-              &#x2022; {t("step1.bullet1")}
-            </motion.p>
-            <motion.p className="text-xl" variants={listItemVariants}>
-              &#x2022; {t("step1.bullet2")}
-            </motion.p>
-          </motion.div>
-        </div>
-        <div className="1_5xl:w-[400px] absolute left-[50%] flex h-[300px] translate-x-[-50%] rotate-270 flex-col items-center justify-start gap-8 rounded-2xl bg-cyan-900/10 p-6 text-cyan-900 shadow-lg shadow-cyan-900/50 sm:w-[50%] md:w-[60%] lg:w-[280px] lg:rotate-0 xl:w-[300px]">
-          <p className="text-3xl">{t("step2.title")}</p>
-          <motion.div
-            className="flex w-full flex-col gap-5"
-            ref={ref2}
-            initial="hidden"
-            animate={isInView2 ? "show" : "hidden"}
-            variants={containerVariants(0.5)}
-          >
-            <motion.p className="text-xl" variants={listItemVariants}>
-              &#x2022; {t("step2.bullet1")}
-            </motion.p>
-            <motion.p className="text-xl" variants={listItemVariants}>
-              &#x2022; {t("step2.bullet1")}
-            </motion.p>
-          </motion.div>
-        </div>
-        <div className="1_5xl:w-[400px] absolute right-0 flex h-[300px] translate-x-[50%] rotate-270 flex-col items-center justify-start gap-8 rounded-2xl bg-cyan-900/10 p-6 text-cyan-900 shadow-lg shadow-cyan-900/50 sm:w-[50%] md:w-[60%] lg:w-[280px] lg:rotate-0 xl:w-[300px]">
-          <p className="text-3xl">{t("step3.title")}</p>
-          <motion.div
-            className="flex w-full flex-col gap-5"
-            ref={ref3}
-            initial="hidden"
-            animate={isInView3 ? "show" : "hidden"}
-            variants={containerVariants(1.0)}
-          >
-            <motion.p className="text-xl" variants={listItemVariants}>
-              &#x2022; {t("step3.bullet1")}
-            </motion.p>
-            <motion.p className="text-xl" variants={listItemVariants}>
-              &#x2022; {t("step3.bullet2")}
-            </motion.p>
-            <motion.p className="text-xl" variants={listItemVariants}>
-              &#x2022; {t("step3.bullet3")}
-            </motion.p>
-          </motion.div>
+        <div className="relative flex flex-col gap-8 lg:w-[75%] 2xl:w-[80%]">
+          <div className="1_5xl:w-[400px] flex h-[300px] flex-col items-center justify-start gap-8 rounded-2xl bg-cyan-900/10 p-6 text-cyan-900 shadow-lg shadow-cyan-900/50 lg:absolute lg:left-0 lg:w-[280px] lg:translate-x-[-50%] xl:w-[300px]">
+            <p className="text-3xl">{t("step1.title")}</p>
+            <motion.div
+              className="flex w-full flex-col gap-5"
+              ref={ref1}
+              initial="hidden"
+              animate={isInView1 ? "show" : "hidden"}
+              variants={containerVariants(0)}
+            >
+              <motion.p
+                className="xsm:text-lg text-xl"
+                variants={listItemVariants}
+              >
+                &#x2022; {t("step1.bullet1")}
+              </motion.p>
+              <motion.p
+                className="xsm:text-lg text-xl"
+                variants={listItemVariants}
+              >
+                &#x2022; {t("step1.bullet2")}
+              </motion.p>
+            </motion.div>
+          </div>
+          <div className="1_5xl:w-[400px] flex h-[300px] flex-col items-center justify-start gap-8 rounded-2xl bg-cyan-900/10 p-6 text-cyan-900 shadow-lg shadow-cyan-900/50 lg:absolute lg:left-[50%] lg:w-[280px] lg:translate-x-[-50%] xl:w-[300px]">
+            <p className="text-3xl">{t("step2.title")}</p>
+            <motion.div
+              className="flex w-full flex-col gap-5"
+              ref={ref2}
+              initial="hidden"
+              animate={isInView2 ? "show" : "hidden"}
+              variants={containerVariants(0.5)}
+            >
+              <motion.p
+                className="xsm:text-lg text-xl"
+                variants={listItemVariants}
+              >
+                &#x2022; {t("step2.bullet1")}
+              </motion.p>
+              <motion.p
+                className="xsm:text-lg text-xl"
+                variants={listItemVariants}
+              >
+                &#x2022; {t("step2.bullet1")}
+              </motion.p>
+            </motion.div>
+          </div>
+          <div className="1_5xl:w-[400px] xsm:h-fit flex h-[300px] flex-col items-center justify-start gap-8 rounded-2xl bg-cyan-900/10 p-6 text-cyan-900 shadow-lg shadow-cyan-900/50 lg:absolute lg:right-0 lg:w-[280px] lg:translate-x-[50%] xl:w-[300px]">
+            <p className="text-3xl">{t("step3.title")}</p>
+            <motion.div
+              className="flex w-full flex-col gap-5"
+              ref={ref3}
+              initial="hidden"
+              animate={isInView3 ? "show" : "hidden"}
+              variants={containerVariants(1.0)}
+            >
+              <motion.p
+                className="xsm:text-lg text-xl"
+                variants={listItemVariants}
+              >
+                &#x2022; {t("step3.bullet1")}
+              </motion.p>
+              <motion.p
+                className="xsm:text-lg text-xl"
+                variants={listItemVariants}
+              >
+                &#x2022; {t("step3.bullet2")}
+              </motion.p>
+              <motion.p
+                className="xsm:text-lg text-xl"
+                variants={listItemVariants}
+              >
+                &#x2022; {t("step3.bullet3")}
+              </motion.p>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
