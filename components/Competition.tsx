@@ -20,20 +20,20 @@ const Competition = () => {
   return (
     <section className="relative mb-[90px] px-[20px] pt-[20px] sm:px-[50px] lg:px-[100px] lg:pt-[80px] 2xl:px-[160px]">
       <Image
-        className="absolute top-[-300px] left-[20px] z-[-10] w-[150] sm:left-[50px] lg:left-[100px] lg:w-[250] xl:top-[0px] 2xl:left-[160px]"
+        className="absolute z-[-10] hidden w-[150] md:top-[-300px] lg:left-[100px] lg:block lg:w-[250] xl:top-[0px] 2xl:left-[160px]"
         src="/homepage/bouldering.svg"
         alt=""
         width={250}
         height={155}
       />
       <Image
-        className="absolute top-[-300px] right-[20px] z-[-10] w-[110px] sm:right-[50px] lg:right-[100px] lg:w-[180] xl:top-[0px] 2xl:right-[160px]"
+        className="absolute z-[-10] hidden w-[110px] md:top-[-300px] lg:right-[100px] lg:block lg:w-[180] xl:top-[0px] 2xl:right-[160px]"
         src="/homepage/bouldering1.svg"
         alt=""
         width={180}
         height={176}
       />
-      <h4 className="my-text-stroke mb-[80px] text-center text-6xl text-cyan-900 lg:mb-[130px]">
+      <h4 className="my-text-stroke mb-[110px] text-center text-6xl text-cyan-900 lg:mb-[130px]">
         {t("title")}
       </h4>
       <div className="xsm:gap-[30px] flex w-full items-center justify-between gap-[55px] sm:gap-[80px] lg:min-h-[450px] lg:flex-col lg:justify-start">

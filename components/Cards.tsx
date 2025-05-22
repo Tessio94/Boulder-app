@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { containerVariants, cardsVariants } from "@/lib/animation";
-import Image from "next/image";
 
 const Cards = () => {
   const t = useTranslations("Cards");
@@ -15,14 +14,14 @@ const Cards = () => {
 
   return (
     <motion.div
-      className="relative z-10 mb-[80px] flex flex-wrap items-stretch justify-between gap-y-12 px-[20px] sm:px-[50px] lg:px-[100px] xl:justify-between xl:gap-12 2xl:px-[160px]"
+      className="relative mb-[50px] flex flex-wrap items-stretch justify-between gap-y-12 px-[20px] sm:px-[50px] md:mb-[80px] lg:px-[100px] xl:justify-between xl:gap-12 2xl:px-[160px]"
       ref={ref}
       initial="hidden"
       animate={isInView ? "show" : "hidden"}
       variants={containerVariants(0)}
     >
       <motion.div
-        className="bg-cards relative z-20 flex flex-col items-center gap-8 rounded-2xl px-6 pt-4 pb-10 shadow-xl shadow-cyan-900/60 md:max-w-[45%] xl:max-w-[30%]"
+        className="bg-cards relative flex flex-col items-center gap-8 rounded-2xl px-6 pt-4 pb-10 shadow-xl shadow-cyan-900/60 md:max-w-[45%] xl:max-w-[30%]"
         variants={cardsVariants}
       >
         <h4 className="my-text-stroke relative text-center text-3xl font-extrabold text-cyan-900 after:absolute after:top-[103%] after:left-[50%] after:h-[5px] after:w-[70px] after:translate-x-[-50%] after:bg-amber-400 after:content-['']">

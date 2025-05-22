@@ -15,7 +15,7 @@ const LoginBanner = () => {
 
   return (
     <div className="relative h-[800px] w-full overflow-hidden bg-[url('/homepage/boulder_1920.jpg')]">
-      <div className="absolute top-[50%] left-[50%] flex w-[800px] max-w-[90%] translate-x-[-50%] translate-y-[-50%] flex-col items-center gap-10 p-10 lg:w-[unset]">
+      <div className="xsm:p-6 absolute top-[50%] left-[50%] flex w-[800px] max-w-[90%] translate-x-[-50%] translate-y-[-50%] flex-col items-center gap-10 p-10 lg:w-[unset]">
         <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-b from-cyan-200/50 via-cyan-200/60 to-amber-400/50 shadow-2xl shadow-amber-400/40 backdrop-blur-md"></div>
         <motion.h5
           className="mb-4 text-center text-3xl text-cyan-900 md:mb-10 md:text-start md:text-4xl"

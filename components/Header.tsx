@@ -2,15 +2,59 @@
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import LocalePicker from "./LocalePicker";
+import { GrGallery } from "react-icons/gr";
+import { MdEmojiEvents } from "react-icons/md";
+import { IoMdHome } from "react-icons/io";
+import { RiLoginBoxFill } from "react-icons/ri";
 
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [hambActive, setHambActive] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
   const pathname = usePathname();
   const t = useTranslations("Header");
 
+  const hamb = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleHambClick = () => {
+      setHambActive((prevState) => {
+        const newState = !prevState;
+
+        if (newState) {
+          hamb.current.classList.add("open");
+          setShowSidebar(true);
+        } else {
+          hamb.current.classList.remove("open");
+          setShowSidebar(false);
+        }
+
+        return newState;
+      });
+    };
+
+    const currentHamb = hamb.current;
+    currentHamb.addEventListener("click", handleHambClick);
+
+    return () => {
+      currentHamb.removeEventListener("click", handleHambClick);
+    };
+  }, []);
+  console.log(showSidebar);
   return (
     <header className="absolute z-10 flex w-full max-w-[1920px] items-center justify-between bg-cyan-100/80 px-16 py-3">
       <Link href="/">
@@ -81,41 +125,62 @@ const Header = () => {
           />
           {t("login")}
         </Link>
-        <LocalePicker />
+        <LocalePicker type="desktop" />
       </div>
 
       {/* Mobile hamb menu */}
-      <button className="lg:hidden">
-        <Image src="/icons/menu.svg" alt="Menu" width={40} height={40} />
-      </button>
+      <div className="lg:hidden">
+        <div
+          id="nav-icon1"
+          className="relative z-50 cursor-pointer text-3xl text-stone-100 lg:hidden"
+          ref={hamb}
+        >
+          <span className="bg-cyan-900"></span>
+          <span className="bg-cyan-900"></span>
+          <span className="bg-cyan-900"></span>
+        </div>
+      </div>
       {/* Mobile navigation */}
-      <nav className="fixed top-0 bottom-0 left-0 z-20 flex w-64 translate-x-[-100%] flex-col justify-between bg-cyan-200 bg-gradient-to-b from-cyan-900/10 to-amber-400/50 px-6 pt-[125px] pb-[225px] shadow-lg lg:hidden">
-        <ul className="flex flex-col gap-8 text-2xl font-bold text-cyan-900">
-          <li>
-            <Link href="/">{t("home")}</Link>
+      {/* translate-x-[-100%] */}
+      <nav
+        className={cn(
+          "fixed top-[125px] bottom-0 left-0 z-50 flex w-[330px] flex-col justify-between bg-gradient-to-b from-cyan-200 to-amber-400 pt-[75px] pb-[75px] shadow-lg transition-all duration-300 lg:hidden",
+          scrolled ? "top-0" : "top-[125px]",
+          showSidebar ? "translate-x-0" : "translate-x-[-100%]",
+        )}
+      >
+        <ul className="flex flex-col text-2xl font-bold text-cyan-900">
+          <li className="px-6 py-3">
+            <Link href="/" className="flex items-center justify-between pr-12">
+              {t("home")} <IoMdHome className="text-3xl" />
+            </Link>
           </li>
-          <li>
-            <Link href={t("linkEvents")}>{t("events")}</Link>
+          <li className="px-6 py-3">
+            <Link
+              href={t("linkEvents")}
+              className="flex items-center justify-between pr-12"
+            >
+              {t("events")} <MdEmojiEvents className="text-3xl" />
+            </Link>
           </li>
-          <li>
-            <Link href={t("linkGallery")}>{t("gallery")}</Link>
+          <li className="px-6 py-3">
+            <Link
+              href={t("linkGallery")}
+              className="flex items-center justify-between pr-13"
+            >
+              {t("gallery")} <GrGallery className="text-2xl" />
+            </Link>
           </li>
         </ul>
-        <div className="my-text-stroke flex flex-col items-start gap-8">
+        <div className="flex flex-col items-center gap-8 px-6">
           <Link
-            className="flex items-center gap-3 rounded-2xl bg-cyan-900/10 text-3xl font-extrabold text-cyan-900/90 transition-all duration-500 hover:bg-cyan-900/30"
+            className="flex w-full items-center justify-between rounded-2xl py-3 pr-15 text-2xl font-bold text-cyan-900/90 transition-all duration-500 hover:bg-cyan-900/30"
             href={t("linkLogin")}
           >
-            <Image
-              src="/header/login.svg"
-              alt="ikona za login"
-              width={40}
-              height={40}
-              className="red"
-            />
             {t("login")}
+            <RiLoginBoxFill className="text-3xl" />
           </Link>
-          <LocalePicker />
+          <LocalePicker type="mobile" />
         </div>
       </nav>
     </header>
