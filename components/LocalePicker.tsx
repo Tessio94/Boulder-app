@@ -1,11 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { usePathname, useRouter, useParams } from "next/navigation";
 import { useMemo } from "react";
 
-const LocalePicker = ({ type }) => {
+const LocalePicker = ({ type }: { type: string }) => {
   const router = useRouter();
   const pathname = usePathname();
   const { locale } = useParams();

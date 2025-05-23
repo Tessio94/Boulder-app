@@ -1,9 +1,9 @@
-import { useTranslations } from "next-intl";
+// import { useTranslations } from "next-intl";
 import { FaArrowDownLong } from "react-icons/fa6";
 import EventsSection from "@/components/EventsSection";
 
 export default function Events() {
-  const t = useTranslations("Landing");
+  // const t = useTranslations("Landing");
 
   return (
     <>

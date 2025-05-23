@@ -20,7 +20,7 @@ const Header = () => {
   const pathname = usePathname();
   const t = useTranslations("Header");
 
-  const hamb = useRef(null);
+  const hamb = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,10 +37,14 @@ const Header = () => {
         const newState = !prevState;
 
         if (newState) {
-          hamb.current.classList.add("open");
+          if (hamb.current) {
+            hamb.current.classList.add("open");
+          }
           setShowSidebar(true);
         } else {
-          hamb.current.classList.remove("open");
+          if (hamb.current) {
+            hamb.current.classList.remove("open");
+          }
           setShowSidebar(false);
         }
 
@@ -49,10 +53,15 @@ const Header = () => {
     };
 
     const currentHamb = hamb.current;
-    currentHamb.addEventListener("click", handleHambClick);
+
+    if (currentHamb) {
+      currentHamb.addEventListener("click", handleHambClick);
+    }
 
     return () => {
-      currentHamb.removeEventListener("click", handleHambClick);
+      if (currentHamb) {
+        currentHamb.removeEventListener("click", handleHambClick);
+      }
     };
   }, []);
 
