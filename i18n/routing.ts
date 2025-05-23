@@ -7,4 +7,15 @@ export const routing = defineRouting({
 
   // Used when no locale matches
   defaultLocale: "en",
+  pathnames: {
+    "/": "/",
+    "/events": "/events",
+    "/login": "/login",
+    "/gallery": {
+      de: "/galerie",
+    },
+    "/register": {
+      de: "/registrieren",
+    },
+  },
 });

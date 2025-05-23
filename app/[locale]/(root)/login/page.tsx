@@ -6,7 +6,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 
-function Login() {
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -70,6 +70,6 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
 export default Login;

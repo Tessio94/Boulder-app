@@ -8,7 +8,7 @@ const Footer = () => {
   const t = useTranslations("Footer");
   return (
     <footer className="z-10 flex w-full max-w-[1920px] flex-col items-center justify-between gap-y-12 bg-cyan-100/40 px-[20px] py-16 sm:px-[50px] lg:px-[60px] xl:flex-row 2xl:px-[160px]">
-      <Link href="/">
+      <a href="#">
         <Image
           className="logo"
           src="/header/logo3.svg"
@@ -16,7 +16,7 @@ const Footer = () => {
           width={200}
           height={150}
         />
-      </Link>
+      </a>
 
       <div>
         <p className="flex items-center gap-5 text-2xl text-cyan-900">
@@ -40,28 +40,32 @@ const Footer = () => {
       </div>
 
       <div className="flex items-center gap-5">
-        <Link
+        <a
           className="flex items-center gap-3 text-3xl font-extrabold text-cyan-900/90"
           href="https://www.facebook.com/dino.routesetter/"
+          target="_blank"
         >
           <Image
             src="/landing/facebook.svg"
             alt="ikona za login"
             width={60}
             height={60}
+            className="transition-all duration-500 hover:scale-110 focus:scale-110 active:scale-110"
           />
-        </Link>
-        <Link
+        </a>
+        <a
           className="flex items-center gap-3 text-3xl font-extrabold text-cyan-900/90"
           href="https://www.instagram.com/dino.routesetting/"
+          target="_blank"
         >
           <Image
             src="/landing/instagram.svg"
             alt="ikona za login"
             width={60}
             height={60}
+            className="transition-all duration-500 hover:scale-110 focus:scale-110 active:scale-110"
           />
-        </Link>
+        </a>
       </div>
     </footer>
   );

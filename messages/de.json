@@ -1,13 +1,13 @@
 {
   "Header": {
-    "home": "Home",
+    "home": "Start",
     "events": "Events",
     "gallery": "Galerie",
     "login": "Login",
-    "linkEvents": "/veranstaltungen",
+    "linkEvents": "/events",
     "linkDetails": "/details",
     "linkGallery": "/galerie",
-    "linkLogin": "/anmelden"
+    "linkLogin": "/login"
   },
 
   "Landing": {

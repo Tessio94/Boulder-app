@@ -10,7 +10,7 @@ const Landing = () => {
   const t = useTranslations("Landing");
 
   return (
-    <div className="relative z-0 h-screen min-h-[800px] w-full overflow-hidden bg-[url(/landing/people_boulder2_1024.jpg)] bg-no-repeat lg:h-fit lg:bg-none">
+    <div className="relative z-0 h-screen min-h-[800px] w-full overflow-hidden bg-[url(/landing/people_boulder2_1024.jpg)] bg-no-repeat lg:h-fit lg:min-h-[unset] lg:bg-none">
       <Image
         className="hidden lg:block lg:h-auto lg:object-contain"
         src="/landing/people_boulder2_1920.jpg"
@@ -69,30 +69,30 @@ const Landing = () => {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1, transition: { duration: 0.4 } }}
           >
-            <Link
+            <a
               href="https://www.instagram.com/dino.routesetting/"
               target="_blank"
             >
               <Image
-                className="w-[40px] transition-all duration-500 hover:scale-110 xl:w-[50px]"
+                className="w-[40px] transition-all duration-500 hover:scale-110 focus:scale-110 active:scale-110 xl:w-[50px]"
                 src="/landing/facebook.svg"
                 alt="Facebook icon"
                 width={50}
                 height={50}
               />
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://www.facebook.com/dino.routesetter/"
               target="_blank"
             >
               <Image
-                className="w-[40px] transition-all duration-500 hover:scale-110 xl:w-[50px]"
+                className="w-[40px] transition-all duration-500 hover:scale-110 focus:scale-110 active:scale-110 xl:w-[50px]"
                 src="/landing/instagram.svg"
                 alt="Instagram icon"
                 width={50}
                 height={50}
               />
-            </Link>
+            </a>
           </motion.div>
         </div>
       </motion.div>

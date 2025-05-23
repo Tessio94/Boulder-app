@@ -70,7 +70,7 @@ const Header = () => {
     setHambActive(false);
     if (hamb.current) hamb.current.classList.remove("open");
   }, [pathname]);
-  console.log(pathname);
+
   return (
     <header className="absolute z-10 flex w-full max-w-[1920px] items-center justify-between bg-cyan-100/80 px-[20px] py-3 sm:px-[50px] lg:px-[60px] 2xl:px-[160px]">
       <Link href="/">
@@ -89,9 +89,9 @@ const Header = () => {
             <Link
               href="/"
               className={cn(
-                "my-text-stroke relative cursor-pointer text-3xl font-extrabold capitalize after:absolute after:top-[100%] after:left-0 after:h-2 after:w-2 after:translate-x-0 after:rounded-full after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] hover:after:translate-x-[80px]",
+                "my-text-stroke relative cursor-pointer text-3xl font-extrabold capitalize after:absolute after:top-[100%] after:left-0 after:h-2 after:w-2 after:translate-x-0 after:rounded-full after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] hover:after:translate-x-[89px]",
                 pathname === "/" || pathname === "/de"
-                  ? "text-cyan-700/80 after:translate-x-[40px]"
+                  ? "text-cyan-700/80 after:translate-x-[48px]"
                   : "text-cyan-900",
               )}
             >
@@ -100,7 +100,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href={t("linkEvents")}
+              href="/events"
               className={cn(
                 "my-text-stroke relative cursor-pointer text-3xl font-extrabold capitalize after:absolute after:top-[100%] after:left-0 after:h-2 after:w-2 after:translate-x-0 after:rounded-full after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] hover:after:translate-x-[108px]",
                 pathname === "/events" || pathname === "/de/events"
@@ -113,7 +113,7 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href={t("linkGallery")}
+              href="/gallery"
               className={cn(
                 "my-text-stroke relative cursor-pointer text-3xl font-extrabold capitalize after:absolute after:top-[100%] after:left-0 after:h-2 after:w-2 after:translate-x-0 after:rounded-full after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] hover:after:translate-x-[114px]",
                 pathname === "/gallery"
@@ -133,7 +133,7 @@ const Header = () => {
       <div className="my-text-stroke ml-auto flex items-center lg:ml-0 lg:gap-4 xl:gap-10">
         <Link
           className="hidden items-center gap-3 rounded-2xl bg-cyan-900/10 px-2 py-[1px] text-3xl font-extrabold text-cyan-900/90 transition-all duration-500 hover:bg-cyan-900/30 focus:bg-cyan-900/30 active:bg-cyan-900/30 lg:flex"
-          href={t("linkLogin")}
+          href="/login"
         >
           <Image
             src="/header/login.svg"
@@ -164,7 +164,7 @@ const Header = () => {
       {/* translate-x-[-100%] */}
       <nav
         className={cn(
-          "fixed top-[125px] bottom-0 left-0 z-50 flex w-[330px] flex-col justify-between bg-gradient-to-b from-cyan-200 to-amber-400 pt-[75px] pb-[75px] shadow-lg transition-all duration-300 lg:hidden",
+          "xsm:w-[260px] fixed top-[125px] bottom-0 left-0 z-50 flex w-[300px] flex-col justify-between bg-gradient-to-b from-cyan-200 to-amber-400 py-12 shadow-lg transition-all duration-300 sm:w-[330px] lg:hidden",
           scrolled ? "top-0" : "top-[125px]",
           showSidebar ? "translate-x-0" : "translate-x-[-100%]",
         )}
@@ -183,7 +183,7 @@ const Header = () => {
           </li>
           <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10 focus:bg-cyan-900/10 active:bg-cyan-900/10">
             <Link
-              href={t("linkEvents")}
+              href="/events"
               className={cn(
                 "flex items-center justify-between pr-12",
                 pathname === "/events" ? "text-cyan-700/80" : "text-cyan-900",
@@ -194,7 +194,7 @@ const Header = () => {
           </li>
           <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10 focus:bg-cyan-900/10 active:bg-cyan-900/10">
             <Link
-              href={t("linkGallery")}
+              href="/gallery"
               className={cn(
                 "flex items-center justify-between pr-12",
                 pathname === "/gallery" ? "text-cyan-700/80" : "text-cyan-900",
@@ -203,20 +203,49 @@ const Header = () => {
               {t("gallery")} <GrGallery className="w-[32px] text-2xl" />
             </Link>
           </li>
-          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10 focus:bg-cyan-900/10 active:bg-cyan-900/10">
+          <li className="border-t-2 border-cyan-900/30 px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10 focus:bg-cyan-900/10 active:bg-cyan-900/10">
             <Link
               className={cn(
                 "flex items-center justify-between pr-12",
                 pathname === "/login" ? "text-cyan-700/80" : "text-cyan-900",
               )}
-              href={t("linkLogin")}
+              href="/login"
             >
               {t("login")}
               <RiLoginBoxFill className="w-[32px] text-3xl" />
             </Link>
           </li>
         </ul>
-        {/* <div className="flex flex-col items-center gap-8 px-6"></div> */}
+        <div className="flex flex-col items-start gap-8 border-t-2 border-cyan-900/30 px-6 pt-3">
+          <div className="flex items-center gap-5">
+            <a
+              className="flex items-center gap-3 text-3xl font-extrabold text-cyan-900/90"
+              href="https://www.facebook.com/dino.routesetter/"
+              target="_blank"
+            >
+              <Image
+                src="/landing/facebook.svg"
+                alt="ikona za login"
+                width={40}
+                height={40}
+                className="transition-all duration-500 hover:scale-110 focus:scale-110 active:scale-110"
+              />
+            </a>
+            <a
+              className="flex items-center gap-3 text-3xl font-extrabold text-cyan-900/90"
+              href="https://www.instagram.com/dino.routesetting/"
+              target="_blank"
+            >
+              <Image
+                src="/landing/instagram.svg"
+                alt="ikona za login"
+                width={40}
+                height={40}
+                className="transition-all duration-500 hover:scale-110 focus:scale-110 active:scale-110"
+              />
+            </a>
+          </div>
+        </div>
       </nav>
     </header>
   );
