@@ -1,9 +1,9 @@
 {
   "Header": {
-    "home": "Startseite",
-    "events": "Veranstaltungen",
+    "home": "Home",
+    "events": "Events",
     "gallery": "Galerie",
-    "login": "Anmelden",
+    "login": "Login",
     "linkEvents": "/veranstaltungen",
     "linkDetails": "/details",
     "linkGallery": "/galerie",

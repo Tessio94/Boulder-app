@@ -90,12 +90,9 @@ const Header = () => {
               href="/"
               className={cn(
                 "my-text-stroke relative cursor-pointer text-3xl font-extrabold capitalize after:absolute after:top-[100%] after:left-0 after:h-2 after:w-2 after:translate-x-0 after:rounded-full after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] hover:after:translate-x-[80px]",
-                pathname === "/"
+                pathname === "/" || pathname === "/de"
                   ? "text-cyan-700/80 after:translate-x-[40px]"
                   : "text-cyan-900",
-                pathname === "/de"
-                  ? "text-cyan-700/80 after:translate-x-[90px] hover:after:translate-x-[172px]"
-                  : "",
               )}
             >
               {t("home")}
@@ -106,12 +103,9 @@ const Header = () => {
               href={t("linkEvents")}
               className={cn(
                 "my-text-stroke relative cursor-pointer text-3xl font-extrabold capitalize after:absolute after:top-[100%] after:left-0 after:h-2 after:w-2 after:translate-x-0 after:rounded-full after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] hover:after:translate-x-[108px]",
-                pathname === "/events"
+                pathname === "/events" || pathname === "/de/events"
                   ? "text-cyan-700/80 after:translate-x-[54px]"
                   : "text-cyan-900",
-                pathname === "/de/events"
-                  ? "text-cyan-700/80 after:translate-x-[145px] hover:after:translate-x-[283px]"
-                  : "",
               )}
             >
               {t("events")}
@@ -138,7 +132,7 @@ const Header = () => {
 
       <div className="my-text-stroke ml-auto flex items-center lg:ml-0 lg:gap-4 xl:gap-10">
         <Link
-          className="hidden items-center gap-3 rounded-2xl bg-cyan-900/10 px-2 py-[1px] text-3xl font-extrabold text-cyan-900/90 transition-all duration-500 hover:bg-cyan-900/30 lg:flex"
+          className="hidden items-center gap-3 rounded-2xl bg-cyan-900/10 px-2 py-[1px] text-3xl font-extrabold text-cyan-900/90 transition-all duration-500 hover:bg-cyan-900/30 focus:bg-cyan-900/30 active:bg-cyan-900/30 lg:flex"
           href={t("linkLogin")}
         >
           <Image
@@ -176,7 +170,7 @@ const Header = () => {
         )}
       >
         <ul className="flex flex-col text-2xl font-bold text-cyan-900">
-          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10">
+          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10 focus:bg-cyan-900/10 active:bg-cyan-900/10">
             <Link
               href="/"
               className={cn(
@@ -187,7 +181,7 @@ const Header = () => {
               {t("home")} <IoMdHome className="w-[32px] text-3xl" />
             </Link>
           </li>
-          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10">
+          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10 focus:bg-cyan-900/10 active:bg-cyan-900/10">
             <Link
               href={t("linkEvents")}
               className={cn(
@@ -198,7 +192,7 @@ const Header = () => {
               {t("events")} <MdEmojiEvents className="w-[32px] text-3xl" />
             </Link>
           </li>
-          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10">
+          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10 focus:bg-cyan-900/10 active:bg-cyan-900/10">
             <Link
               href={t("linkGallery")}
               className={cn(
@@ -209,7 +203,7 @@ const Header = () => {
               {t("gallery")} <GrGallery className="w-[32px] text-2xl" />
             </Link>
           </li>
-          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10">
+          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10 focus:bg-cyan-900/10 active:bg-cyan-900/10">
             <Link
               className={cn(
                 "flex items-center justify-between pr-12",

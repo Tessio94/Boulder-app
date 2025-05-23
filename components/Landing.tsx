@@ -50,16 +50,16 @@ const Landing = () => {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1, transition: { duration: 0.4 } }}
           >
-            <button className="b-cyan-900 group cursor-pointer rounded-lg bg-amber-400 px-4 py-2 text-xl text-cyan-900 transition-all duration-500 hover:bg-cyan-900 hover:text-amber-400 xl:text-2xl">
-              <span className="relative after:absolute after:top-[105%] after:left-0 after:h-0.5 after:w-0 after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] group-hover:after:w-full">
+            <button className="b-cyan-900 group cursor-pointer rounded-lg bg-amber-400 px-4 py-2 text-xl text-cyan-900 transition-all duration-500 hover:bg-cyan-900 hover:text-amber-400 focus:bg-cyan-900 focus:text-amber-400 active:bg-cyan-900 active:text-amber-400 xl:text-2xl">
+              <span className="relative after:absolute after:top-[105%] after:left-0 after:h-0.5 after:w-0 after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] group-hover:after:w-full group-focus:after:w-full group-active:after:w-full">
                 {t("button1")}
               </span>
             </button>
             <Link
               href="/events/#events"
-              className="group cursor-pointer rounded-lg bg-cyan-900 px-4 py-2 text-xl text-amber-400 transition-all duration-500 hover:bg-amber-400 hover:text-cyan-900 xl:text-2xl"
+              className="group cursor-pointer rounded-lg bg-cyan-900 px-4 py-2 text-xl text-amber-400 transition-all duration-500 hover:bg-amber-400 hover:text-cyan-900 focus:bg-amber-400 focus:text-cyan-900 active:bg-amber-400 active:text-cyan-900 xl:text-2xl"
             >
-              <span className="relative after:absolute after:top-[105%] after:left-0 after:h-0.5 after:w-0 after:bg-cyan-900 after:transition-all after:duration-500 after:content-[''] group-hover:after:w-full">
+              <span className="relative after:absolute after:top-[105%] after:left-0 after:h-0.5 after:w-0 after:bg-cyan-900 after:transition-all after:duration-500 after:content-[''] group-hover:after:w-full group-focus:after:w-full group-active:after:w-full">
                 {t("button2")}
               </span>
             </Link>

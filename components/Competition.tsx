@@ -95,7 +95,7 @@ const Competition = () => {
               </motion.p>
             </motion.div>
           </div>
-          <div className="1_5xl:w-[400px] xsm:h-fit flex h-[300px] flex-col items-center justify-start gap-8 rounded-2xl bg-cyan-900/10 p-6 text-cyan-900 shadow-lg shadow-cyan-900/50 lg:absolute lg:right-0 lg:w-[280px] lg:translate-x-[50%] xl:w-[300px]">
+          <div className="1_5xl:w-[400px] xsm:h-fit flex h-[300px] min-h-fit flex-col items-center justify-start gap-8 rounded-2xl bg-cyan-900/10 p-6 text-cyan-900 shadow-lg shadow-cyan-900/50 lg:absolute lg:right-0 lg:w-[280px] lg:translate-x-[50%] xl:w-[300px]">
             <p className="text-3xl">{t("step3.title")}</p>
             <motion.div
               className="flex w-full flex-col gap-5"
