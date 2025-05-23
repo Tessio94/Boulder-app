@@ -55,11 +55,14 @@ const Landing = () => {
                 {t("button1")}
               </span>
             </button>
-            <button className="group cursor-pointer rounded-lg bg-cyan-900 px-4 py-2 text-xl text-amber-400 transition-all duration-500 hover:bg-amber-400 hover:text-cyan-900 xl:text-2xl">
+            <Link
+              href="/events/#events"
+              className="group cursor-pointer rounded-lg bg-cyan-900 px-4 py-2 text-xl text-amber-400 transition-all duration-500 hover:bg-amber-400 hover:text-cyan-900 xl:text-2xl"
+            >
               <span className="relative after:absolute after:top-[105%] after:left-0 after:h-0.5 after:w-0 after:bg-cyan-900 after:transition-all after:duration-500 after:content-[''] group-hover:after:w-full">
                 {t("button2")}
               </span>
-            </button>
+            </Link>
           </motion.div>
           <motion.div
             className="flex gap-4"

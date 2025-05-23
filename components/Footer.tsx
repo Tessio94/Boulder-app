@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 const Footer = () => {
   const t = useTranslations("Footer");
   return (
-    <footer className="z-10 flex w-full max-w-[1920px] flex-col items-center justify-between gap-y-12 bg-cyan-100/40 px-[20px] py-16 sm:px-[50px] lg:px-[100px] xl:flex-row 2xl:px-[160px]">
+    <footer className="z-10 flex w-full max-w-[1920px] flex-col items-center justify-between gap-y-12 bg-cyan-100/40 px-[20px] py-16 sm:px-[50px] lg:px-[60px] xl:flex-row 2xl:px-[160px]">
       <Link href="/">
         <Image
           className="logo"

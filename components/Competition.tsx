@@ -18,7 +18,7 @@ const Competition = () => {
   const isInView3 = useInView(ref3, { once: true, amount: 0.3 });
 
   return (
-    <section className="relative mb-[90px] px-[20px] pt-[20px] sm:px-[50px] lg:px-[100px] lg:pt-[80px] 2xl:px-[160px]">
+    <section className="relative mb-[90px] px-[20px] pt-[20px] sm:px-[50px] lg:px-[60px] lg:pt-[80px] 2xl:px-[160px]">
       <Image
         className="absolute z-[-10] hidden w-[150] md:top-[-300px] lg:left-[100px] lg:block lg:w-[250] xl:top-[0px] 2xl:left-[160px]"
         src="/homepage/bouldering.svg"

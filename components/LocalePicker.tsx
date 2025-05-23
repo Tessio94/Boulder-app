@@ -86,12 +86,12 @@ const LocalePicker = ({ type }) => {
           </div>
         </div>
       ) : (
-        <div className="w-[50%] rounded-2xl bg-cyan-900/10 px-6 py-2 transition-all duration-500">
+        <div className="xsm:mr-3 xsm:px-2 mr-6 rounded-2xl bg-cyan-900/10 px-3 py-2 transition-all duration-500 sm:mr-10 sm:px-6 lg:hidden">
           {otherLocales.map((lang) => (
             <div
               key={lang}
               onClick={() => pickLang(lang)}
-              className="group/inner flex cursor-pointer items-center justify-between rounded-2xl text-3xl font-semibold text-cyan-900/90 transition-all duration-500 hover:text-cyan-700/80"
+              className="group/inner flex cursor-pointer items-center gap-3 rounded-2xl text-3xl font-semibold text-cyan-900/90 transition-all duration-500 hover:text-cyan-700/80"
             >
               {lang.toUpperCase()}
               <div className="h-[22px] w-[22px] shrink-0 overflow-hidden rounded-full border-[1px] border-transparent transition-all duration-500 group-hover/inner:border-amber-400">

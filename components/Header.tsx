@@ -16,6 +16,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [hambActive, setHambActive] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
+
   const pathname = usePathname();
   const t = useTranslations("Header");
 
@@ -54,9 +55,15 @@ const Header = () => {
       currentHamb.removeEventListener("click", handleHambClick);
     };
   }, []);
-  console.log(showSidebar);
+
+  useEffect(() => {
+    setShowSidebar(false);
+    setHambActive(false);
+    if (hamb.current) hamb.current.classList.remove("open");
+  }, [pathname]);
+  console.log(pathname);
   return (
-    <header className="absolute z-10 flex w-full max-w-[1920px] items-center justify-between bg-cyan-100/80 px-16 py-3">
+    <header className="absolute z-10 flex w-full max-w-[1920px] items-center justify-between bg-cyan-100/80 px-[20px] py-3 sm:px-[50px] lg:px-[60px] 2xl:px-[160px]">
       <Link href="/">
         <Image
           className="logo"
@@ -77,6 +84,9 @@ const Header = () => {
                 pathname === "/"
                   ? "text-cyan-700/80 after:translate-x-[40px]"
                   : "text-cyan-900",
+                pathname === "/de"
+                  ? "text-cyan-700/80 after:translate-x-[90px] hover:after:translate-x-[172px]"
+                  : "",
               )}
             >
               {t("home")}
@@ -90,6 +100,9 @@ const Header = () => {
                 pathname === "/events"
                   ? "text-cyan-700/80 after:translate-x-[54px]"
                   : "text-cyan-900",
+                pathname === "/de/events"
+                  ? "text-cyan-700/80 after:translate-x-[145px] hover:after:translate-x-[283px]"
+                  : "",
               )}
             >
               {t("events")}
@@ -103,6 +116,9 @@ const Header = () => {
                 pathname === "/gallery"
                   ? "text-cyan-700/80 after:translate-x-[57px]"
                   : "text-cyan-900",
+                pathname === "/de/gallery"
+                  ? "text-cyan-700/80 after:translate-x-[60px] hover:after:translate-x-[112px]"
+                  : "",
               )}
             >
               {t("gallery")}
@@ -129,6 +145,7 @@ const Header = () => {
       </div>
 
       {/* Mobile hamb menu */}
+      <LocalePicker type="mobile" />
       <div className="lg:hidden">
         <div
           id="nav-icon1"
@@ -150,38 +167,53 @@ const Header = () => {
         )}
       >
         <ul className="flex flex-col text-2xl font-bold text-cyan-900">
-          <li className="px-6 py-3">
-            <Link href="/" className="flex items-center justify-between pr-12">
-              {t("home")} <IoMdHome className="text-3xl" />
+          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10">
+            <Link
+              href="/"
+              className={cn(
+                "flex items-center justify-between pr-12",
+                pathname === "/" ? "text-cyan-700/80" : "text-cyan-900",
+              )}
+            >
+              {t("home")} <IoMdHome className="w-[32px] text-3xl" />
             </Link>
           </li>
-          <li className="px-6 py-3">
+          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10">
             <Link
               href={t("linkEvents")}
-              className="flex items-center justify-between pr-12"
+              className={cn(
+                "flex items-center justify-between pr-12",
+                pathname === "/events" ? "text-cyan-700/80" : "text-cyan-900",
+              )}
             >
-              {t("events")} <MdEmojiEvents className="text-3xl" />
+              {t("events")} <MdEmojiEvents className="w-[32px] text-3xl" />
             </Link>
           </li>
-          <li className="px-6 py-3">
+          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10">
             <Link
               href={t("linkGallery")}
-              className="flex items-center justify-between pr-13"
+              className={cn(
+                "flex items-center justify-between pr-12",
+                pathname === "/gallery" ? "text-cyan-700/80" : "text-cyan-900",
+              )}
             >
-              {t("gallery")} <GrGallery className="text-2xl" />
+              {t("gallery")} <GrGallery className="w-[32px] text-2xl" />
+            </Link>
+          </li>
+          <li className="px-6 py-3 transition-all duration-300 hover:bg-cyan-900/10">
+            <Link
+              className={cn(
+                "flex items-center justify-between pr-12",
+                pathname === "/login" ? "text-cyan-700/80" : "text-cyan-900",
+              )}
+              href={t("linkLogin")}
+            >
+              {t("login")}
+              <RiLoginBoxFill className="w-[32px] text-3xl" />
             </Link>
           </li>
         </ul>
-        <div className="flex flex-col items-center gap-8 px-6">
-          <Link
-            className="flex w-full items-center justify-between rounded-2xl py-3 pr-15 text-2xl font-bold text-cyan-900/90 transition-all duration-500 hover:bg-cyan-900/30"
-            href={t("linkLogin")}
-          >
-            {t("login")}
-            <RiLoginBoxFill className="text-3xl" />
-          </Link>
-          <LocalePicker type="mobile" />
-        </div>
+        {/* <div className="flex flex-col items-center gap-8 px-6"></div> */}
       </nav>
     </header>
   );

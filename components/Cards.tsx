@@ -14,7 +14,7 @@ const Cards = () => {
 
   return (
     <motion.div
-      className="relative mb-[50px] flex flex-wrap items-stretch justify-between gap-y-12 px-[20px] sm:px-[50px] md:mb-[80px] lg:px-[100px] xl:justify-between xl:gap-12 2xl:px-[160px]"
+      className="relative mb-[50px] flex flex-wrap items-stretch justify-between gap-y-12 px-[20px] sm:px-[50px] md:mb-[80px] lg:px-[60px] xl:justify-between xl:gap-12 2xl:px-[160px]"
       ref={ref}
       initial="hidden"
       animate={isInView ? "show" : "hidden"}
