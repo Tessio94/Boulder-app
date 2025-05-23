@@ -10,7 +10,7 @@ const Landing = () => {
   const t = useTranslations("Landing");
 
   return (
-    <div className="relative z-0 h-screen max-h-screen w-full overflow-hidden bg-[url(/landing/people_boulder2_1024.jpg)] bg-no-repeat lg:h-fit lg:bg-none">
+    <div className="relative z-0 h-screen min-h-[800px] w-full overflow-hidden bg-[url(/landing/people_boulder2_1024.jpg)] bg-no-repeat lg:h-fit lg:bg-none">
       <Image
         className="hidden lg:block lg:h-auto lg:object-contain"
         src="/landing/people_boulder2_1920.jpg"
