@@ -1,10 +1,12 @@
+import GalleryGrid from "@/components/GalleryGrid";
 import Image from "next/image";
+import { FaArrowDownLong } from "react-icons/fa6";
 import { SlMagnifier } from "react-icons/sl";
 
 const Gallery = () => {
   return (
     <>
-      <div className="relative z-0 h-screen min-h-[800px] w-full overflow-hidden bg-[url(/homepage/gallery_1024.jpg)] bg-no-repeat lg:h-fit lg:min-h-[unset] lg:bg-none">
+      <div className="relative z-0 flex h-screen min-h-[800px] w-full items-center justify-center overflow-hidden bg-[url(/homepage/gallery_1024.jpg)] bg-no-repeat lg:block lg:h-fit lg:min-h-[unset] lg:bg-none">
         <Image
           className="hidden lg:block lg:h-auto lg:object-contain"
           src="/homepage/gallery.jpg"
@@ -49,34 +51,32 @@ const Gallery = () => {
         className="3xl:block hidden"
         />
         </div> */}
-        <div className="3xl:bottom-[200px] absolute bottom-[300px] left-[50%] flex w-[800px] translate-x-[-50%] flex-col gap-8 rounded-2xl bg-gradient-to-b from-cyan-300/10 via-cyan-200/80 to-amber-400/80 px-16 py-4 shadow-2xl shadow-amber-400/40 backdrop-blur-md lg:bottom-[70px] xl:bottom-[100px] xl:gap-12 xl:py-8 2xl:bottom-[140px]">
-          <h5 className="my-text-stroke text-shadow-2xl text-center text-4xl font-extrabold text-cyan-900 text-shadow-cyan-900 2xl:text-6xl">
-            Search for the gallery from events
-          </h5>
-          <div className="flex flex-col gap-6 xl:gap-8">
-            <p className="text-2xl text-cyan-900 2xl:text-3xl">
-              Find your favorite event you have been on and the image gallery
-              from that day
-            </p>
+        <div className="absolute top-[50%] left-[50%] flex w-[800px] max-w-[90%] translate-x-[-50%] flex-col gap-8 rounded-2xl xl:gap-12">
+          <div className="flex flex-col items-center gap-14 sm:gap-10 xl:gap-12">
+            <h5 className="my-text-stroke2 relative text-5xl font-extrabold text-amber-400 after:absolute after:top-[118%] after:left-[50%] after:h-[5px] after:w-[20%] after:translate-x-[-50%] after:rounded-2xl after:border-[1px] after:border-cyan-900 after:bg-amber-400 after:content-[''] sm:after:top-[130%] xl:text-6xl">
+              See list of galleries
+            </h5>
             <div className="flex w-full items-center">
-              <div className="flex h-[68px] shrink-0 basis-[10%] items-center justify-center rounded-tl-2xl rounded-bl-2xl bg-cyan-900 py-4">
-                <SlMagnifier className="text-2xl font-extrabold text-cyan-200 xl:text-3xl 2xl:text-4xl" />
+              <div className="flex h-[68px] shrink-0 basis-[20%] items-center justify-center rounded-tl-2xl rounded-bl-2xl bg-cyan-900 py-4 sm:basis-[10%]">
+                <SlMagnifier className="text-2xl font-extrabold text-amber-400 xl:text-3xl 2xl:text-4xl" />
               </div>
-              <div className="h-[68px] basis-[90%] overflow-hidden rounded-2xl rounded-l-none border-b-[1px] border-cyan-900 bg-cyan-900/10 px-[20px] py-4 text-2xl text-nowrap text-cyan-900 xl:text-3xl 2xl:text-4xl">
-                Find your gallery...
+              <div className="h-[68px] basis-[80%] overflow-hidden rounded-2xl rounded-l-none border-b-[3px] border-cyan-900 bg-amber-400/70 px-[20px] py-4 text-2xl text-nowrap text-cyan-900 sm:basis-[90%] xl:text-3xl 2xl:text-4xl">
+                Search galleries...
               </div>
             </div>
+            <a
+              href="#gallery"
+              className="b-cyan-900 group xsm:text-xl cursor-pointer rounded-lg border-2 border-cyan-900 bg-amber-400 px-4 py-2 text-2xl text-cyan-900 transition-all duration-500 hover:border-amber-400 hover:bg-cyan-900 hover:text-amber-400 focus:border-amber-400 focus:bg-cyan-900 focus:text-amber-400 active:border-amber-400 active:bg-cyan-900 active:text-amber-400 sm:text-3xl"
+            >
+              <span className="group/inner relative flex items-center gap-3 after:absolute after:top-[105%] after:left-0 after:h-0.5 after:w-0 after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] group-focus:after:w-[77%] group-active:after:w-[85%]">
+                All galleries{" "}
+                <FaArrowDownLong className="transition-all duration-500 group-hover/inner:translate-y-1.5" />
+              </span>
+            </a>
           </div>
         </div>
       </div>
-      <main>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-          <div className="aspect-square bg-blue-500"></div>
-          <div className="aspect-square bg-red-500"></div>
-          <div className="aspect-square bg-green-500"></div>
-          <div className="aspect-square bg-yellow-500"></div>
-        </div>
-      </main>
+      <GalleryGrid />
     </>
   );
 };

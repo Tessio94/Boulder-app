@@ -1,10 +1,10 @@
 "use client";
 
-import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { cardsVariants, listItemVariants } from "@/lib/animation";
 import { EventType } from "@/types";
+import Link from "next/link";
 
 const Event = ({ title, date, description, link }: EventType) => {
   // console.log(title, date, description);
@@ -20,7 +20,7 @@ const Event = ({ title, date, description, link }: EventType) => {
       />
 
       <Link
-        href=""
+        href={link}
         className="bg-cards hover:bg-cards-dark active:bg-cards-dark focus:bg-cards-dark relative z-20 flex cursor-pointer flex-col gap-8 rounded-xl bg-cover bg-no-repeat px-4 py-3 text-cyan-900 shadow-2xl shadow-cyan-900/60 transition-all duration-500 hover:shadow-cyan-900 focus:shadow-cyan-900 active:shadow-cyan-900"
       >
         <div>

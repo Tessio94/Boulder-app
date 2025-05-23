@@ -67,7 +67,7 @@ const EventsLanding = () => {
           <div className="flex gap-4">
             <a
               href="#events"
-              className="b-cyan-900 group xsm:text-xl cursor-pointer rounded-lg bg-amber-400 px-4 py-2 text-2xl text-cyan-900 transition-all duration-500 hover:bg-cyan-900 hover:text-amber-400 focus:bg-cyan-900 focus:text-amber-400 active:bg-cyan-900 active:text-amber-400 sm:text-3xl"
+              className="b-cyan-900 group xsm:text-xl cursor-pointer rounded-lg border-2 border-cyan-900 bg-amber-400 px-4 py-2 text-2xl text-cyan-900 transition-all duration-500 hover:border-amber-400 hover:bg-cyan-900 hover:text-amber-400 focus:border-amber-400 focus:bg-cyan-900 focus:text-amber-400 active:border-amber-400 active:bg-cyan-900 active:text-amber-400 sm:text-3xl"
             >
               <span className="group/inner relative flex items-center gap-3 after:absolute after:top-[105%] after:left-0 after:h-0.5 after:w-0 after:bg-amber-400 after:transition-all after:duration-500 after:content-[''] group-focus:after:w-[85%] group-active:after:w-[85%]">
                 Find list of events below{" "}
