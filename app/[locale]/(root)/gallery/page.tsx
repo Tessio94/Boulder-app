@@ -56,11 +56,11 @@ const Gallery = () => {
             <h5 className="my-text-stroke2 relative text-center text-5xl font-extrabold text-amber-400 drop-shadow-md drop-shadow-amber-400 text-shadow-amber-400 after:absolute after:top-[118%] after:left-[50%] after:h-[5px] after:w-[20%] after:translate-x-[-50%] after:rounded-2xl after:border-[1px] after:border-cyan-900 after:bg-amber-400 after:content-[''] sm:after:top-[130%] xl:text-6xl">
               See list of galleries
             </h5>
-            <div className="flex w-full items-center">
+            <div className="flex w-full items-center shadow-2xl shadow-cyan-900">
               <div className="flex h-[68px] shrink-0 basis-[20%] items-center justify-center rounded-tl-2xl rounded-bl-2xl bg-cyan-900 py-4 sm:basis-[10%]">
                 <SlMagnifier className="text-2xl font-extrabold text-amber-400 xl:text-3xl 2xl:text-4xl" />
               </div>
-              <div className="h-[68px] basis-[80%] overflow-hidden rounded-2xl rounded-l-none border-b-[3px] border-cyan-900 bg-amber-400/70 px-[20px] py-4 text-2xl text-nowrap text-cyan-900 shadow-2xl shadow-cyan-900 sm:basis-[90%] xl:text-3xl 2xl:text-4xl">
+              <div className="h-[68px] basis-[80%] overflow-hidden rounded-2xl rounded-l-none border-b-[3px] border-cyan-900 bg-amber-400/70 px-[20px] py-4 text-2xl text-nowrap text-cyan-900 sm:basis-[90%] xl:text-3xl 2xl:text-4xl">
                 Search galleries...
               </div>
             </div>
