@@ -10,7 +10,7 @@ const EventsLanding = () => {
       <div className="xsm:top-[unset] xsm:bottom-16 absolute top-[200px] left-[50%] w-[800px] max-w-[90%] translate-x-[-50%] sm:w-[505px] sm:max-w-[72%] lg:w-[unset]">
         <div className="relative z-10 mb-10 flex flex-col gap-6">
           <motion.h2
-            className="bold my-text-stroke2 relative mb-3 text-center text-6xl text-amber-400 after:absolute after:top-[105%] after:left-[50%] after:h-[5px] after:w-[20%] after:translate-x-[-50%] after:rounded-2xl after:border-[1px] after:border-cyan-900 after:bg-amber-400 after:content-[''] xl:text-8xl"
+            className="bold my-text-stroke2 relative mb-3 text-center text-6xl text-amber-400 text-shadow-cyan-900 text-shadow-lg after:absolute after:top-[105%] after:left-[50%] after:h-[5px] after:w-[20%] after:translate-x-[-50%] after:rounded-2xl after:border-[1px] after:border-cyan-900 after:bg-amber-400 after:content-[''] xl:text-8xl"
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1, transition: { duration: 0.4 } }}
           >

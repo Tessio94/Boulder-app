@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { containerVariants, cardsVariants } from "@/lib/animation";
+import { containerVariants, cardsGalleryVariants } from "@/lib/animation";
 
 const Cards = () => {
   const t = useTranslations("Cards");
@@ -23,7 +23,7 @@ const Cards = () => {
         ref={ref1}
         initial="hidden"
         animate={inView1 ? "show" : "hidden"}
-        variants={cardsVariants}
+        variants={cardsGalleryVariants}
       >
         <h4 className="my-text-stroke relative text-center text-3xl font-extrabold text-cyan-900 after:absolute after:top-[103%] after:left-[50%] after:h-[5px] after:w-[70px] after:translate-x-[-50%] after:bg-amber-400 after:content-['']">
           {t("card1.title")}
@@ -43,7 +43,7 @@ const Cards = () => {
         ref={ref2}
         initial="hidden"
         animate={inView2 ? "show" : "hidden"}
-        variants={cardsVariants}
+        variants={cardsGalleryVariants}
       >
         <h4 className="my-text-stroke relative text-center text-3xl font-extrabold text-cyan-900 after:absolute after:top-[103%] after:left-[50%] after:h-[5px] after:w-[70px] after:translate-x-[-50%] after:bg-amber-400 after:content-['']">
           {t("card2.title")}
@@ -63,7 +63,7 @@ const Cards = () => {
         ref={ref3}
         initial="hidden"
         animate={inView3 ? "show" : "hidden"}
-        variants={cardsVariants}
+        variants={cardsGalleryVariants}
       >
         <h4 className="my-text-stroke relative text-center text-3xl font-extrabold text-cyan-900 after:absolute after:top-[103%] after:left-[50%] after:h-[5px] after:w-[70px] after:translate-x-[-50%] after:bg-amber-400 after:content-['']">
           {t("card3.title")}

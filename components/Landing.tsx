@@ -23,7 +23,7 @@ const Landing = () => {
         <div className="absolute inset-0 -z-10 rounded-2xl bg-gradient-to-b from-cyan-200/50 via-cyan-200/60 to-amber-400/50 shadow-2xl shadow-amber-400/40 backdrop-blur-md"></div>
         <div className="flex flex-col gap-4 p-4 xl:gap-8 xl:p-8">
           <motion.h2
-            className="bold relative mb-6 text-center text-4xl text-amber-400 after:absolute after:top-[105%] after:left-[50%] after:h-[5px] after:w-[20%] after:translate-x-[-50%] after:bg-amber-400 after:content-[''] md:w-full md:text-start md:after:left-0 md:after:translate-x-0 lg:mb-0 xl:text-6xl"
+            className="bold relative mb-6 text-center text-4xl text-amber-400 text-shadow-cyan-900 text-shadow-lg after:absolute after:top-[105%] after:left-[50%] after:h-[5px] after:w-[20%] after:translate-x-[-50%] after:bg-amber-400 after:content-[''] md:w-full md:text-start md:after:left-0 md:after:translate-x-0 lg:mb-0 xl:text-6xl"
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1, transition: { duration: 0.4 } }}
           >
