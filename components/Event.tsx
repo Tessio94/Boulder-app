@@ -1,16 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { cardsVariants, listItemVariants } from "@/lib/animation";
+import { motion, useInView } from "framer-motion";
+import { cardsVariants } from "@/lib/animation";
 import { EventType } from "@/types";
 import Link from "next/link";
+import { useRef } from "react";
 
 const Event = ({ title, date, description, link }: EventType) => {
-  // console.log(title, date, description);
-  // console.log(link);
+  const ref = useRef(null);
+
+  const isInView = useInView(ref, { once: true, amount: 0.6 });
   return (
-    <motion.li className="relative" variants={cardsVariants}>
+    <motion.li
+      className="relative"
+      variants={cardsVariants}
+      initial="hidden"
+      animate={isInView ? "show" : "hidden"}
+      ref={ref}
+    >
       <Image
         src="/events/carabiner.svg"
         alt="carabiner icon"

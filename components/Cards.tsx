@@ -8,20 +8,21 @@ import { containerVariants, cardsVariants } from "@/lib/animation";
 const Cards = () => {
   const t = useTranslations("Cards");
 
-  const ref = useRef(null);
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
 
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const inView1 = useInView(ref1, { once: true, amount: 0.6 });
+  const inView2 = useInView(ref2, { once: true, amount: 0.6 });
+  const inView3 = useInView(ref3, { once: true, amount: 0.6 });
 
   return (
-    <motion.div
-      className="relative mb-[50px] flex flex-wrap items-stretch justify-between gap-y-12 px-[20px] sm:px-[50px] md:mb-[80px] lg:px-[60px] xl:justify-between xl:gap-12 2xl:px-[160px]"
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "show" : "hidden"}
-      variants={containerVariants(0)}
-    >
+    <motion.div className="relative mb-[50px] flex flex-wrap items-stretch justify-between gap-y-12 px-[20px] sm:px-[50px] md:mb-[80px] lg:px-[60px] xl:justify-between xl:gap-12 2xl:px-[160px]">
       <motion.div
         className="bg-cards relative flex flex-col items-center gap-8 rounded-2xl px-6 pt-4 pb-10 shadow-xl shadow-cyan-900/60 md:max-w-[45%] xl:max-w-[30%]"
+        ref={ref1}
+        initial="hidden"
+        animate={inView1 ? "show" : "hidden"}
         variants={cardsVariants}
       >
         <h4 className="my-text-stroke relative text-center text-3xl font-extrabold text-cyan-900 after:absolute after:top-[103%] after:left-[50%] after:h-[5px] after:w-[70px] after:translate-x-[-50%] after:bg-amber-400 after:content-['']">
@@ -39,6 +40,9 @@ const Cards = () => {
       </motion.div>
       <motion.div
         className="bg-cards flex flex-col items-center gap-8 rounded-2xl px-6 pt-4 pb-10 shadow-xl shadow-cyan-900/60 md:max-w-[45%] xl:max-w-[30%]"
+        ref={ref2}
+        initial="hidden"
+        animate={inView2 ? "show" : "hidden"}
         variants={cardsVariants}
       >
         <h4 className="my-text-stroke relative text-center text-3xl font-extrabold text-cyan-900 after:absolute after:top-[103%] after:left-[50%] after:h-[5px] after:w-[70px] after:translate-x-[-50%] after:bg-amber-400 after:content-['']">
@@ -56,6 +60,9 @@ const Cards = () => {
       </motion.div>
       <motion.div
         className="bg-cards mx-auto flex flex-col items-center gap-8 rounded-2xl px-6 pt-4 pb-10 shadow-xl shadow-cyan-900/60 md:max-w-[45%] xl:mx-[unset] xl:max-w-[30%]"
+        ref={ref3}
+        initial="hidden"
+        animate={inView3 ? "show" : "hidden"}
         variants={cardsVariants}
       >
         <h4 className="my-text-stroke relative text-center text-3xl font-extrabold text-cyan-900 after:absolute after:top-[103%] after:left-[50%] after:h-[5px] after:w-[70px] after:translate-x-[-50%] after:bg-amber-400 after:content-['']">
