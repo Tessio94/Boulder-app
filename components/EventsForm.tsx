@@ -20,7 +20,7 @@ const EventsForm = () => {
               type="date"
               id="from"
               name="from"
-              className="border-b-[1px] border-cyan-900 bg-cyan-900/10 px-[20px] py-3 text-2xl text-cyan-900"
+              className="rounded-2xl border-b-[1px] border-cyan-900 bg-cyan-900/10 px-[20px] py-3 text-2xl text-cyan-900"
             />
           </div>
           <div className="flex w-full flex-col gap-2 md:w-[unset] md:basis-[45%]">
@@ -34,7 +34,7 @@ const EventsForm = () => {
               type="date"
               id="to"
               name="to"
-              className="border-b-[1px] border-cyan-900 bg-cyan-900/10 px-[20px] py-3 text-2xl text-cyan-900"
+              className="rounded-2xl border-b-[1px] border-cyan-900 bg-cyan-900/10 px-[20px] py-3 text-2xl text-cyan-900"
             />
           </div>
         </div>
@@ -45,7 +45,7 @@ const EventsForm = () => {
           >
             Select the hall
           </label>
-          <div className="border-b-[1px] border-cyan-900 bg-cyan-900/10 px-[20px] py-3 text-2xl text-cyan-900">
+          <div className="rounded-2xl border-b-[1px] border-cyan-900 bg-cyan-900/10 px-[20px] py-3 text-2xl text-cyan-900">
             <div className="flex items-center justify-between">
               <p>Oldenbloc</p>
               <IoMdArrowDropdown />
@@ -59,7 +59,7 @@ const EventsForm = () => {
           >
             Search
           </label>
-          <div className="border-b-[1px] border-cyan-900 bg-cyan-900/10 px-[20px] py-3 text-2xl text-cyan-900">
+          <div className="rounded-2xl border-b-[1px] border-cyan-900 bg-cyan-900/10 px-[20px] py-3 text-2xl text-cyan-900">
             <div className="flex items-center justify-between">
               <p>Search the hall/term</p>
               <SlMagnifier />

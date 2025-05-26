@@ -1,3 +1,5 @@
+import { easeInOut, easeOut } from "framer-motion";
+
 export const containerVariants = (delayChildren = 0) => ({
   // initial state
   hidden: {},
@@ -22,5 +24,5 @@ export const cardsVariants = {
 
 export const cardsGalleryVariants = {
   hidden: { y: 100, opacity: 0 },
-  show: { y: 0, opacity: 1, transition: { duration: 0.4 } },
+  show: { y: 0, opacity: 1, transition: { duration: 0.4, easeInOut } },
 };
