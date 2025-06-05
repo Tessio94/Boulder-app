@@ -18,9 +18,16 @@ const LocalePicker = ({ type }: { type: string }) => {
 
   const pickLang = (newLocale: string) => {
     const segments = pathname.split("/");
-    segments[1] = newLocale;
-    const newPath = segments.join("/");
-    router.push(newPath);
+    console.log(segments);
+    if (newLocale === "en") {
+      segments[1] = newLocale;
+      const newPath = segments.join("/");
+      router.push(newPath);
+    } else {
+      segments.splice(1, 0, "de");
+      const newPath = segments.join("/");
+      router.push(newPath);
+    }
   };
 
   const otherLocales = useMemo(
